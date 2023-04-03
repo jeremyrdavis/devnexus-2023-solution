@@ -6,21 +6,21 @@ metadata:
     app.quarkus.io/build-timestamp: 2023-04-02 - 15:50:20 +0000
   labels:
     app.kubernetes.io/name: kubernetes-config-example
-    app.kubernetes.io/version: latest
+    app.kubernetes.io/version: v7
   name: kubernetes-config-example
 spec:
   replicas: 1
   selector:
     matchLabels:
       app.kubernetes.io/name: kubernetes-config-example
-      app.kubernetes.io/version: latest
+      app.kubernetes.io/version: v7
   template:
     metadata:
       annotations:
         app.quarkus.io/build-timestamp: 2023-04-02 - 15:50:20 +0000
       labels:
         app.kubernetes.io/name: kubernetes-config-example
-        app.kubernetes.io/version: latest
+        app.kubernetes.io/version: v7
     spec:
       containers:
         - env:
@@ -28,7 +28,7 @@ spec:
               valueFrom:
                 fieldRef:
                   fieldPath: metadata.namespace
-          image: jeremydavis/kubernetes-config-example:latest
+          image: jeremydavis/kubernetes-config-example:v7
           imagePullPolicy: Always
           name: kubernetes-config-example
           ports:
@@ -44,7 +44,7 @@ metadata:
     app.quarkus.io/build-timestamp: 2023-04-02 - 15:50:20 +0000
   labels:
     app.kubernetes.io/name: kubernetes-config-example
-    app.kubernetes.io/version: latest
+    app.kubernetes.io/version: v7
   name: kubernetes-config-example
 ---
 apiVersion: rbac.authorization.k8s.io/v1
@@ -66,7 +66,7 @@ metadata:
     app.quarkus.io/build-timestamp: 2023-04-02 - 15:50:20 +0000
   labels:
     app.kubernetes.io/name: kubernetes-config-example
-    app.kubernetes.io/version: latest
+    app.kubernetes.io/version: v7
   name: kubernetes-config-example
 spec:
   ports:
@@ -76,5 +76,5 @@ spec:
       targetPort: 8080
   selector:
     app.kubernetes.io/name: kubernetes-config-example
-    app.kubernetes.io/version: latest
+    app.kubernetes.io/version: v7
   type: ClusterIP
